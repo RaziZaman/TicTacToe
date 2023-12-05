@@ -17,7 +17,12 @@ public class Display {
     public static boolean winCheck(String A1, String B1, String C1, String A2, String B2, String C2, String A3, String B3, String C3) {
         if (A1.equals(B1) && B1.equals(C1) && (B1.equals("X") || B1.equals("O")) || A2.equals(B2) && B2.equals(C2) && (B2.equals("X") || B2.equals("O")) || A3.equals(B3) && B3.equals(C3) && (B3.equals("X") || B3.equals("O"))) {
             return true;
-        } else return (A1.equals(A2) && A2.equals(A3) && (A2.equals("X") || A2.equals("O")) || B1.equals(B2) && B2.equals(B3) && (B2.equals("X") || B2.equals("O")) || C1.equals(C2) && C2.equals(C3) && (C2.equals("X") || C2.equals("O")));
+        } else if (A1.equals(A2) && A2.equals(A3) && (A2.equals("X") || A2.equals("O")) || B1.equals(B2) && B2.equals(B3) && (B2.equals("X") || B2.equals("O")) || C1.equals(C2) && C2.equals(C3) && (C2.equals("X") || C2.equals("O"))) {
+            return true;
+        } else if (!A1.equals(" ") && !A2.equals(" ") && !A3.equals(" ") && !B1.equals(" ") && !B2.equals(" ") && !B3.equals(" ") && !C1.equals(" ") && !C2.equals(" ") && !C3.equals(" ")) {
+            return true;
+        }
+        return false;
     }
     public static boolean winCheck(String A1, String C1, String B2, String A3, String C3) {
         return A1.equals(B2) && B2.equals(C3) && (B2.equals("X") || B2.equals("O")) || C1.equals(B2) && B2.equals(A3) && (B2.equals("X") || B2.equals("O"));
